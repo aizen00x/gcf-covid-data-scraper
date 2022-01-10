@@ -6,7 +6,7 @@ from .retrieve_timeout_error import RetrieveTimeoutError
 
 class Retriever:
     """
-    Class which encapsulates retrieving data from API
+    Retrieves data from API
     """
     def __init__(
             self,
@@ -21,6 +21,7 @@ class Retriever:
     def retrieve(self, timeout: int = 60) -> str:
         """
         Fetch data from API
+        :param int timeout: Timeout for data retrieving. Default is 60 seconds.
         :return: JSON string with data
         :raises: RetrieveTimeoutException
         """

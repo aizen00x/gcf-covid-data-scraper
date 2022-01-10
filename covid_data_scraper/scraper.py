@@ -11,7 +11,9 @@ from flask import Response
 
 class Scraper:
     """
-    Class encapsulates retrieving data from API and writing it to pubsub topic
+    Represents Google Cloud Function which is triggered by HTTP request.
+    The function is responsible for retrieving data from COVID API and writing retrieved data to
+    Cloud Pub/Sub topic
     """
 
     def __init__(
@@ -29,6 +31,10 @@ class Scraper:
         self.request_timeout_in_seconds = request_timeout_in_seconds
 
     def scrape(self) -> Response:
+        """
+        Retrieve data from COVID API and write it to Cloud Pub/Sub topic
+        :return: Response
+        """
         try:
             data = self.retriever.retrieve(timeout=self.request_timeout_in_seconds)
             logging.info(f"Successfully retrieved API Data: {data}")

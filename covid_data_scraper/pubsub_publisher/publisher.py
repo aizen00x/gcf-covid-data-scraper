@@ -6,7 +6,8 @@ from .publish_timeout_error import PublishTimeoutError
 
 class Publisher:
     """
-    Class which encapsulates publishing to pubsub topic
+    Establishes connection with Google Cloud Pub/Sub and is responsible for publishing to a
+    topic
     """
 
     def __init__(
